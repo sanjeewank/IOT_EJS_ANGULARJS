@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Parcel</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+<div class="mainbox">
+    <h1>Parcel System</h1><hr>
+    <h4>Your Parcel Has been Created</h4><hr>
+    <P><b>Parcel ID: </b><%=Parcelid[0].parcelId %><br>
+    <b>Customer: </b><%=CustomerDet[0].CustName %><br>
+    <b>From: </b><%=CustomerDet[0].Address %>, <%=CustomerDet[0].City %><br>
+    <b>To: </b><%=finalLocation[0].locAddress %>, <%=finalLocation[0].city %></P>
+    
+    <hr>
+    <form action="./">
+        <button type="submit" class="btn btn-warning"> < Back to Home</button>
+    </form>
+</div>
+
+</body>
+</html>

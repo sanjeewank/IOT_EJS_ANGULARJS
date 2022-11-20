@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Parcels</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+<div class="mainbox">
+    <h1>Parcel System</h1><hr>
+    <h4>My Parcels</h4><hr>
+    <form class="form-inline" action="./MyParcels">
+        <div class="form-group">
+            <label for="Customer">Select Customer Name: </label>&nbsp;
+            <select style="width: 350px;" class="form-control" name="customer">
+              <% for(var i=0; i < customers.length ; i++) {%>
+                <option value="<%=customers[i].custId%>"><%=customers[i].custName%></option>
+              <%}%>
+            </select>
+        </div>&nbsp;&nbsp;
+        <button style="width: 150px;" type="submit" class="btn btn-success">View Parcels</button>
+    </form>
+
+    <% if(ParcelData!=0 && fromData!=0){%>
+    <% if(ParcelData[0].parcelid){%>
+      <br><br><br>
+      <table class="table">
+        <thead>
+            <tr>
+              <th>Parcel ID</th>
+              <th>Weight</th>
+              <th>From</th>
+              <th>To</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < ParcelData.length ; i++) {%>
+            <tr>
+              <td> <%=ParcelData[i].parcelid %></td>
+              <td> <%=ParcelData[i].weight %></td>
+              <td> <%=fromData[0].fromadd %>, <%=fromData[0].fromcity %></td>
+              <td><%=ParcelData[i].finalAdd %>, <%=ParcelData[i].FinalCity %></td>
+            </tr>
+            <% }%>
+        </tbody>
+      </table>
+    <% }else{ %>
+      <br><br><br>
+      <div class="alert alert-warning alert-dismissible">
+        <strong>Sorry!</strong> selected customer didn't post any parcels yet.
+      </div>
+    <% }}%>
+</div>
+
+</body>
+</html>
